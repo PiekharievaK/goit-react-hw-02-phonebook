@@ -1,3 +1,8 @@
+@media screen and (max-width: 767px) {
+  .form {
+    align-items: center;
+  }
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -25,7 +30,7 @@
   width: 150px;
   margin-left: 12px;
   margin-bottom: 30px;
-  background-color: #5bd8d8;
+  background-color: #96d4d4;
   border: none;
   cursor: pointer;
   border-radius: 3px;
@@ -33,5 +38,5 @@
 
 .button:hover,
 .button:focus {
-  background: #6db4b4;
+  background-color: #5eb9b9c9;
 }

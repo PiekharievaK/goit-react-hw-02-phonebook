@@ -1,5 +1,12 @@
 @import-normalize;
 /* @import url(./components/page-background.jpg); */
+@media screen and (max-width: 767px){
+  #root {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  } 
+}
 #root {
   padding: 30px;
 }

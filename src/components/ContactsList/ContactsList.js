@@ -12,12 +12,15 @@ function ContactsList({ data, deleteFoo, ChangeFoo }) {
               <span className={s.name}>{element.name}:</span>
               <span className={s.number}> {optimizePhone(element.number)}</span>
             </span>
+            <span className={s.buttonsBox}>
+
             <button id={element.id} className={s.button} onClick={deleteFoo}>
               Delete
             </button>{' '}
             <button id={element.id} className={s.button} onClick={ChangeFoo}>
               Change
             </button>
+            </span>
           </li>
         );
       })}

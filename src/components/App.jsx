@@ -20,11 +20,10 @@ class App extends Component {
 
     const { name, number } = data;
     const contactInfo = { id: shortid(), name: name, number: number };
-    
-      this.setState((prevState) => ({
-        contacts: [contactInfo, ...prevState.contacts],
-      }));
-    
+
+    this.setState(prevState => ({
+      contacts: [contactInfo, ...prevState.contacts],
+    }));
   };
 
   deleteContact = e => {
@@ -62,8 +61,9 @@ class App extends Component {
       'Number',
       clientAnswer => {
         const test = contacts.find(contact => contact.id === e.target.id);
-        if (clientAnswer.trim().length === 0) {
-          window.alert(`The field is empty, please try again`);
+        if (clientAnswer.trim().length === 0 || !!Number(clientAnswer)) {
+          window.alert(`
+          There is a mistake somewhere, try again. Contact name should include letters`);
           return;
         }
         const result = window.confirm(
@@ -79,8 +79,10 @@ class App extends Component {
 
       clientAnswer => {
         const test = contacts.find(contact => contact.id === e.target.id);
-        if (clientAnswer.trim().length === 0) {
-          window.alert(`The field is empty, please try again`);
+        if (clientAnswer.trim().length === 0 || !Number(clientAnswer)) {
+          window.alert(
+            ` There is a mistake somewhere, try again. Phone number should include just numbers and acceptably '+' '-' symbols  `
+          );
           return;
         }
         const result = window.confirm(

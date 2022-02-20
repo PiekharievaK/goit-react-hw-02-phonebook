@@ -12,7 +12,7 @@ class ContactForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    const { name} = this.state;
+    const { name } = this.state;
     const names = this.props.contactsArr;
 
     if (names.includes(name.toLowerCase())) {
@@ -73,7 +73,6 @@ class ContactForm extends Component {
           <input
             type="text"
             name="name"
-            test=""
             className={s.input}
             onChange={this.handleChange}
             value={this.state.name}
