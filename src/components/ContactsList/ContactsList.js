@@ -13,13 +13,12 @@ function ContactsList({ data, deleteFoo, ChangeFoo }) {
               <span className={s.number}> {optimizePhone(element.number)}</span>
             </span>
             <span className={s.buttonsBox}>
-
-            <button id={element.id} className={s.button} onClick={deleteFoo}>
-              Delete
-            </button>{' '}
-            <button id={element.id} className={s.button} onClick={ChangeFoo}>
-              Change
-            </button>
+              <button id={element.id} className={s.button} onClick={deleteFoo}>
+                Delete
+              </button>{' '}
+              <button id={element.id} className={s.button} onClick={ChangeFoo}>
+                Change
+              </button>
             </span>
           </li>
         );
@@ -31,11 +30,11 @@ function ContactsList({ data, deleteFoo, ChangeFoo }) {
 function optimizePhone(numbertoformat) {
   if (
     (numbertoformat.includes('+') && !numbertoformat.includes('-')) ||
-    numbertoformat.length > 10
+    numbertoformat.length >= 12
   ) {
     const formatNumber = numbertoformat.replace(
       /(\d{2})(\d{3})(\d{3})(\d{2})(\d{2})/,
-      '$1($2) $3-$4-$5'
+      '$1 ($2) $3-$4-$5'
     );
     return formatNumber;
   } else if (!numbertoformat.includes('-') && numbertoformat.length <= 9) {
