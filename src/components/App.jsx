@@ -20,11 +20,11 @@ class App extends Component {
 
     const { name, number } = data;
     const contactInfo = { id: shortid(), name: name, number: number };
-    {
-      this.setState(prevState => ({
+    
+      this.setState((prevState) => ({
         contacts: [contactInfo, ...prevState.contacts],
       }));
-    }
+    
   };
 
   deleteContact = e => {
