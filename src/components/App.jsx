@@ -39,10 +39,11 @@ class App extends Component {
 
   findContacts = fieldValue => {
     const { contacts } = this.state;
+    const loverValue = fieldValue.toLowerCase();
     const filteredContacts = contacts.filter(contact => {
       return (
-        contact.name.toLowerCase().includes(fieldValue) ||
-        contact.number.includes(fieldValue)
+        contact.name.toLowerCase().includes(loverValue) ||
+        contact.number.includes(loverValue)
       );
     });
     return filteredContacts;
