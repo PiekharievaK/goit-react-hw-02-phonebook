@@ -2,7 +2,7 @@ import { Component } from 'react';
 import ContactForm from './NewContactForm/NewContactForm';
 import ContactsList from './ContactsList/ContactsList';
 import Filter from './ContactsFilter/ContactsFilter';
-import { Report, Confirm } from 'notiflix';
+import { Confirm } from 'notiflix';
 
 class App extends Component {
   state = {
@@ -61,7 +61,7 @@ class App extends Component {
       'Name',
       'Number',
       clientAnswer => {
-        const test = contacts.find(contact => contact.id == e.target.id);
+        const test = contacts.find(contact => contact.id === e.target.id);
         if (clientAnswer.trim().length === 0) {
           window.alert(`The field is empty, please try again`);
           return;
@@ -78,7 +78,7 @@ class App extends Component {
       },
 
       clientAnswer => {
-        const test = contacts.find(contact => contact.id == e.target.id);
+        const test = contacts.find(contact => contact.id === e.target.id);
         if (clientAnswer.trim().length === 0) {
           window.alert(`The field is empty, please try again`);
           return;
