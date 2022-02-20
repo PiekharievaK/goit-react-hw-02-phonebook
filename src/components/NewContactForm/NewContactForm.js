@@ -12,7 +12,7 @@ class ContactForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    const { name, number } = this.state;
+    const { name} = this.state;
     const names = this.props.contactsArr;
 
     if (names.includes(name.toLowerCase())) {
